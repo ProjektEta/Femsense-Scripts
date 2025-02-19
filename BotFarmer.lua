@@ -14,6 +14,7 @@ until LocalPlayerPawn.Character
 
 LocalPlayerPawn.Character.HumanoidRootPart.CFrame = CFrame.new(-1406.72839, -277.854156, -2856.31812, -0.590612888, -0.0480175428, -0.805525124, 9.73045826e-06, 0.998227596, -0.0595117137, 0.80695504, -0.0351562202, -0.589565575)
 
+
 local StuckBG = Instance.new("BodyGyro", LocalPlayerPawn.Character.Torso)
 StuckBG.P = 9e4
 StuckBG.maxTorque = Vector3.new(9e9, 9e9, 9e9)
@@ -48,12 +49,12 @@ playerstats_start.Money = game.ReplicatedStorage.playerstats:FindFirstChild(Loca
 playerstats_start.TotalXP = game.ReplicatedStorage.playerstats:FindFirstChild(LocalPlayerPawn.Name).Stats.xp.Value + (game.ReplicatedStorage.playerstats:FindFirstChild(LocalPlayerPawn.Name).Stats.level.Value * 10000)
 
 local function mainLoop()
-    
     game:GetService("ReplicatedStorage"):WaitForChild("events"):WaitForChild("afk"):FireServer(false)
     game:GetService("ReplicatedStorage"):WaitForChild("events"):WaitForChild("SellAll"):InvokeServer()  
 
     local s,e = pcall(function()
-        
+        LocalPlayerPawn.Character.HumanoidRootPart.CFrame = CFrame.new(-1406.72839, -277.854156, -2856.31812, -0.590612888, -0.0480175428, -0.805525124, 9.73045826e-06, 0.998227596, -0.0595117137, 0.80695504, -0.0351562202, -0.589565575)
+
         local event;
 
         for _,v in pairs(LocalPlayerPawn.Character:GetChildren()) do
