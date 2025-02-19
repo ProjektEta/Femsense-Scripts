@@ -31,7 +31,7 @@ local TpFolder = WorldFolder:WaitForChild("spawns"):WaitForChild("TpSpots")
 local NpcFolder = WorldFolder:WaitForChild("npcs")
 
 local tp_locations = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjektEta/Femsense-Beta/refs/heads/main/Scripts/tools/Fisch/tplocations.lua"))()
-local worldevents = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjektEta/Femsense-Beta/refs/heads/main/Scripts/tools/Fisch/worldevents.lua"))()
+local worldevents = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjektEta/Femsense-Scripts/refs/heads/main/V2/Fisch/Tools/WorldEvents.lua"))()
 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/i77lhm/vaderpaste/refs/heads/main/library.lua"))() 
 local pointers = library.flags 
