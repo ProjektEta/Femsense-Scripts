@@ -1,7 +1,7 @@
 
 local places = {
     [16732694052] = "https://raw.githubusercontent.com/ProjektEta/Femsense-Scripts/refs/heads/main/V1/Fisch/Main.lua",
-    [18901165922] = 'https://raw.githubusercontent.com/ProjektEta/Femscr.dll/refs/heads/main/Scripts/Pets%20Go/Premium.lua'
+    [18901165922] = 'https://raw.githubusercontent.com/ProjektEta/Femsense-Scripts/refs/heads/main/V1/Pets%20Go/Main.lua'
 }
 
 
