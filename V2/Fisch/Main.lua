@@ -30,8 +30,8 @@ end
 local TpFolder = WorldFolder:WaitForChild("spawns"):WaitForChild("TpSpots") 
 local NpcFolder = WorldFolder:WaitForChild("npcs")
 
-local tp_locations = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjektEta/Femsense-Scripts/refs/heads/main/V2/Fisch/Tools/TPLocations.lua"))()
-local worldevents = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjektEta/Femsense-Scripts/refs/heads/main/V2/Fisch/Tools/WorldEvents.lua"))()
+local tp_locations = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjektEta/Femsense-Beta/refs/heads/main/Scripts/tools/Fisch/tplocations.lua"))()
+local worldevents = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjektEta/Femsense-Beta/refs/heads/main/Scripts/tools/Fisch/worldevents.lua"))()
 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/i77lhm/vaderpaste/refs/heads/main/library.lua"))() 
 local pointers = library.flags 
@@ -128,27 +128,27 @@ do
     Modifiers:toggle({name = "Inf Oxygen", flag = "InfOxygen", default = false, tooltip = "Gives you inf oxygen", callback = function(v)
         local s,e = pcall(function()
             if v == true then
-                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character:WaitForChild("oxygen") ~= nil and LocalPlayerPawn.Character:WaitForChild("oxygen").Enabled == true then	
-                    LocalPlayerPawn.Character.oxygen.Enabled = false	
+                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("oxygen") ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("oxygen").Enabled == true then	
+                    LocalPlayerPawn.Character.Resources.oxygen.Enabled = false	
                 end	
-                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character:WaitForChild("oxygen(peaks)") ~= nil and LocalPlayerPawn.Character:WaitForChild("oxygen(peaks)").Enabled == true and pointers["InfOxygen"] == true then	
-                    LocalPlayerPawn.Character["oxygen(peaks)"].Enabled = false	
+                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("oxygen(peaks)") ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("oxygen(peaks)").Enabled == true and pointers["InfOxygen"] == true then	
+                    LocalPlayerPawn.Character.Resources["oxygen(peaks)"].Enabled = false	
                 end	
                 CharAntiDrownCon = LocalPlayerPawn.Character.CharacterAdded:Connect(function()	
-                    if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character:WaitForChild("oxygen") ~= nil and LocalPlayerPawn.Character:WaitForChild("oxygen").Enabled == true and pointers["InfOxygen"] == true then	
-                        LocalPlayerPawn.Character.oxygen.Enabled = false	
+                    if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("oxygen") ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("oxygen").Enabled == true and pointers["InfOxygen"] == true then	
+                        LocalPlayerPawn.Character.Resources.oxygen.Enabled = false	
                     end	
 
-                    if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character:WaitForChild("oxygen(peaks)") ~= nil and LocalPlayerPawn.Character:WaitForChild("oxygen(peaks)").Enabled == true and pointers["InfOxygen"] == true then	
-                        LocalPlayerPawn.Character["oxygen(peaks)"].Enabled = false	
+                    if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("oxygen(peaks)") ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("oxygen(peaks)").Enabled == true and pointers["InfOxygen"] == true then	
+                        LocalPlayerPawn.Character.Resources["oxygen(peaks)"].Enabled = false	
                     end	
                 end)
             else	
-                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character:WaitForChild("oxygen") ~= nil and LocalPlayerPawn.Character:WaitForChild("oxygen").Enabled == false then	
-                    LocalPlayerPawn.Character.client.oxygen.Enabled = true	
+                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("oxygen") ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("oxygen").Enabled == false then	
+                    LocalPlayerPawn.Character.Resources.oxygen.Enabled = true	
                 end	
-                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character:WaitForChild("oxygen(peaks)") ~= nil and LocalPlayerPawn.Character:WaitForChild("oxygen(peaks)").Enabled == true and pointers["InfOxygen"] == true then	
-                    LocalPlayerPawn.Character["oxygen(peaks)"].Enabled = true	
+                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("oxygen(peaks)") ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("oxygen(peaks)").Enabled == true and pointers["InfOxygen"] == true then	
+                    LocalPlayerPawn.Character.Resources["oxygen(peaks)"].Enabled = true	
                 end	
     
                 if CharAntiDrownCon then
@@ -162,27 +162,27 @@ do
     Modifiers:toggle({name = "No Tempeture", flag = "NoTemp", default = false, tooltip = "Gives you No heat/cold", callback = function(v)
         local s,e = pcall(function()
             if v == true then
-                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character:WaitForChild("temperature") ~= nil and LocalPlayerPawn.Character:WaitForChild("temperature").Enabled == true then	
-                    LocalPlayerPawn.Character.temperature.Enabled = false	
+                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("temperature") ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("temperature").Enabled == true then	
+                    LocalPlayerPawn.Character.Resources.temperature.Enabled = false	
                 end	
-                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character:WaitForChild("temperature(heat)") ~= nil and LocalPlayerPawn.Character:WaitForChild("temperature(heat)").Enabled == true and pointers["NoTemp"] == true then	
-                    LocalPlayerPawn.Character["temperature(heat)"].Enabled = false	
+                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("temperature(heat)") ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("temperature(heat)").Enabled == true and pointers["NoTemp"] == true then	
+                    LocalPlayerPawn.Character.Resources["temperature(heat)"].Enabled = false	
                 end	
                 AntiTempCharConn = LocalPlayerPawn.Character.CharacterAdded:Connect(function()	
-                    if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character:WaitForChild("temperature") ~= nil and LocalPlayerPawn.Character:WaitForChild("temperature").Enabled == true and pointers["NoTemp"] == true then	
-                        LocalPlayerPawn.Character.temperature.Enabled = false	
+                    if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("temperature") ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("temperature").Enabled == true and pointers["NoTemp"] == true then	
+                        LocalPlayerPawn.Character.Resources.temperature.Enabled = false	
                     end	
 
-                    if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character:WaitForChild("temperature(heat)") ~= nil and LocalPlayerPawn.Character:WaitForChild("temperature(heat)").Enabled == true and pointers["NoTemp"] == true then	
-                        LocalPlayerPawn.Character["temperature(heat)"].Enabled = false	
+                    if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("temperature(heat)") ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("temperature(heat)").Enabled == true and pointers["NoTemp"] == true then	
+                        LocalPlayerPawn.Character.Resources["temperature(heat)"].Enabled = false	
                     end	
                 end)
             else	
-                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character:WaitForChild("temperature") ~= nil and LocalPlayerPawn.Character:WaitForChild("temperature").Enabled == false then	
-                    LocalPlayerPawn.Character.client.temperature.Enabled = true	
+                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("temperature") ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("temperature").Enabled == false then	
+                    LocalPlayerPawn.Character.Resources.temperature.Enabled = true	
                 end	
-                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character:WaitForChild("oxygen(peaks)") ~= nil and LocalPlayerPawn.Character:WaitForChild("temperature(heat)").Enabled == false then	
-                    LocalPlayerPawn.Character["temperature(heat)"].Enabled = true	
+                if LocalPlayerPawn.Character ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("oxygen(peaks)") ~= nil and LocalPlayerPawn.Character.Resources:WaitForChild("temperature(heat)").Enabled == false then	
+                    LocalPlayerPawn.Character.Resources["temperature(heat)"].Enabled = true	
                 end	
     
                 if AntiTempCharConn then
