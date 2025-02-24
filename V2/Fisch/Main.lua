@@ -39,7 +39,7 @@ local pointers = library.flags
 library:notification({text = "Femsense is loading..."})
 
 local window = library:window({
-    name = "FemsenseV2 Beta",
+    name = "Femsense PC",
     size = UDim2.fromOffset(500, 500)
 })
 
@@ -190,9 +190,6 @@ do
                 end
             end 
         end)
-        if e then
-
-        end
     end})
 
     local Interactables = client:section({name = "Interactables", side = "right"})
@@ -372,10 +369,16 @@ local function mainLoop()
         return
     end
 
+    local ___db = 0
+
     local ui = LocalPlayerPawn.PlayerGui:FindFirstChild("shakeui")
     repeat
         ui = LocalPlayerPawn.PlayerGui:FindFirstChild("shakeui")
-        task.wait()
+        task.wait(.1)
+        ___db+=1
+        if ___db >= 20 then
+            return 
+        end
     until ui
 
     repeat
