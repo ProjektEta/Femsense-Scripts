@@ -26,7 +26,7 @@ local UserInputService = game:GetService("UserInputService")
 loadstring(game:HttpGet('https://raw.githubusercontent.com/drillygzzly/Roblox-UI-Libs/main/Yun%20V2%20Lib/Yun%20V2%20Lib%20Source.lua'))()
 
 local Library = initLibrary()
-local Window = Library:Load({name = "Femsense Premium", sizeX = 425, sizeY = 512, color = Color3.fromRGB(255, 255, 255)})
+local Window = Library:Load({name = "Femsense MOBILE", sizeX = 425, sizeY = 512, color = Color3.fromRGB(255, 255, 255)})
 
 
 local AutoFish = Window:Tab("Fisch")
